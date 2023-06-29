@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1>TO DO LIST</h1>
+    <div class="search-bar">
+        <input type="text" id="search-bar" placeholder="Search Here......">
+        <span class="search-icon"><i class="fa fa-search"></i></span>
+    </div>
+    
+    <form class="container" id="myForm" onsubmit="submitData(event)">
+
+        <div class="cont-items">
+            
+            <div class="details" >
+                <label for="activity_id">Activity</label>
+                <input type="text" id="activity_id" required placeholder="Enter Your Activity"/>
+                <p id="error_activity"></p>
+            </div>
+            <div class="details">
+                <label for="startdate_id">Start Date</label>
+                <input type="date" id="startdate_id" required/>
+                <p id="error_startdate"></p>
+            </div>
+            <div class="details">
+                <label for="enddate_id">End Date</label>
+                <input type="date" id="enddate_id" required>
+                <p id="error_enddate"></p>
+            </div>
+            <div class="details" >
+                <label for="status_id">Status</label>
+                <select name="status" id="status_id" required>
+                    
+                </select>
+                <p id="error"></p>
+            </div>
+        
+        </div>
+        <input class="submit-btn" type="submit" value="ADD" />
+        
+    </form>
+
+    <form class="popup-overlay" id="edit_form" onsubmit="popup_form(event)">
+        <div class="popup-content">
+            <div class="details" >
+                <label for="edit_activity">Employee ID</label>
+                <input type="text" id="edit_activity"  required>
+                <p id="editerror_activity"></p>
+            </div>
+            <div class="details" >
+                <label for="edit_sdate">Name</label>
+                <input type="date" id="edit_sdate" required>
+                <p id="editerror_sdate"></p>
+            </div>
+            <div class="details">
+                <label for="edit_edate">Age</label>
+                <input type="date" id="edit_edate" required>
+                <p id="editerror_edate"></p>
+            </div>
+            <div class="details">
+                <label for="edit_status">Gender</label>
+                <select name="Gender" id="edit_status" required>
+                    <option value="UpComing">UpComing</option>
+                    <option value="InProcess">InProcess</option>
+                    <option value="Completed">Completed</option>
+                    <option value="DuePass">DuePass</option>
+                </select>
+                <p id=""></p>
+            </div>
+            <button type="submit" id="update-id" name="action" value="update">Update</button>
+            <button type="submit" class="cancel-btn" id="cancel-id" name="action" value="cancel">cancel</button>
+        </div>    
+
+    </form>
+    
+
+
+    <div class="table">
+        <table class="info">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="display">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    
+    </body>
+
+   
+</html>
